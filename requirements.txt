@@ -5,3 +5,12 @@ pdfplumber
 python-docs
 ollama
 python-docx
+requests
+beautifulsoup4
+tinyfish
+requests
+schedule
+pywhatkit
+pyautogui
+apscheduler
+twilio

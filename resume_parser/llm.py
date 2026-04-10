@@ -1,4 +1,5 @@
 from groq import Groq
+import os 
 
 def build_prompt(text):
     return f"""
@@ -26,10 +27,10 @@ Resume:
 {text}
 """
 
-client = Groq(api_key="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")
+client = Groq(api_key=os.getenv("GROQ_KEY"))
 def parse_resume(text):
     response = client.chat.completions.create(
-        model="openai/gpt-oss-120b",
+        model = "llama-3.1-8b-instant",
         messages=[
             {"role": "user", "content": build_prompt(text)}
         ]
