@@ -12,13 +12,19 @@ cursor = conn.cursor()
 # DROP TABLE IF EXISTS users
                
 # """)
-cursor.execute("""
+import sqlite3
 
+conn = sqlite3.connect("/tmp/study_plans.db", check_same_thread=False)
+cursor = conn.cursor()
+
+cursor.execute("""
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    phone TEXT,
+    phone TEXT UNIQUE,
     plan TEXT,
-    duration_days INTEGER
+    duration_days INTEGER,
+    start_date TEXT,
+    last_sent_day INTEGER DEFAULT 0
 )
 """)
 
