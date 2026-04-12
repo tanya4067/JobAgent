@@ -1,10 +1,10 @@
 import json
 from database import conn, cursor
 
-def save_user(phone, plan):
+def save_user(phone, plan,duration_days):
     cursor.execute(
-        "INSERT INTO users (phone, plan, current_day) VALUES (?, ?, ?)",
-        (phone, json.dumps(plan), 1)
+        "INSERT INTO users (phone, plan, duration_days) VALUES (?, ?, ?)",
+        (phone, json.dumps(plan), duration_days)
     )
     conn.commit()
 

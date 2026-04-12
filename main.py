@@ -52,21 +52,14 @@ def create_plan(request: StudyRequest,phone:str):
         request.duration_days,
         request.level
     )
-    save_user(phone, plan)
+    save_user(phone, plan, request.duration_days)
     return {
         "plan": plan
     }
 
 @app.post("/subscribe")
 def subscribe():
-
-    scheduler.add_job(
-    send_daily_data,
-    "interval",
-    minutes=1, 
-    id="test_job",
-    replace_existing=True
-    )
+    send_daily_data()
     return {"message": "Subscribed successfully & scheduler started"}
 
 
