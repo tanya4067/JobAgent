@@ -7,15 +7,11 @@ cursor = conn.cursor()
 
 
 
-# cursor.execute("""
+cursor.execute("""
 
-# DROP TABLE IF EXISTS users
+DROP TABLE IF EXISTS users
                
-# """)
-import sqlite3
-
-conn = sqlite3.connect("/tmp/study_plans.db", check_same_thread=False)
-cursor = conn.cursor()
+""")
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS users (

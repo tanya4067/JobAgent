@@ -64,9 +64,9 @@ def subscribe():
 
 
 @app.get("/get_all_data")
-def get_all_data(day: int ):
+def get_all_data():
 
-    result = fetch_all_data_for_day(day)
+    result = fetch_all_data_for_day()
     return {
         "message": "Filtered data",
         "data": result

@@ -80,7 +80,6 @@ def send_daily_data():
             to='whatsapp:+91' + item["phone"]
         )
 
-        # ✅ update last sent day
         cursor.execute(
             "UPDATE users SET last_sent_day = ? WHERE id = ?",
             (item["current_day"], item["user_id"])
