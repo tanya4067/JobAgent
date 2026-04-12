@@ -7,11 +7,11 @@ cursor = conn.cursor()
 
 
 
-cursor.execute("""
+# cursor.execute("""
 
-DROP TABLE IF EXISTS users
+# DROP TABLE IF EXISTS users
                
-""")
+# """)
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS users (
